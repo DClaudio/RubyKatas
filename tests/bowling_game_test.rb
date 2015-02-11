@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require '../main/bowling_game'
+require '../lib/bowling_game'
 
 class BowlingGameTest < Minitest::Test
 

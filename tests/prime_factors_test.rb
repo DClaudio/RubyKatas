@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require '../main/prime_factors'
+require '../lib/prime_factors'
 
 class PrimeFactorsTest < Minitest::Test
 
