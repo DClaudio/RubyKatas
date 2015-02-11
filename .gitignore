@@ -1,0 +1,17 @@
+# Intellij
+.idea/
+*.iml
+*.iws
+
+# Mac
+.DS_Store
+
+# Maven
+log/
+# Ignore target at the top level
+/target/
+# Ignore child project's targets as well
+/*/target/
+# And any grandchildren ...
+/*/*/target/
+# Or you 

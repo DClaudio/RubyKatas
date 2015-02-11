@@ -21,4 +21,7 @@ class PrimeFactorsTest < Minitest::Test
   def test_six
     assert_equal([2,2,2], generatePrimes(8), "generating prime factors for 8")
   end
+  def test_seven
+    assert_equal([3,3], generatePrimes(9), "generating prime factors for 9")
+  end
 end
