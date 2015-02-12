@@ -61,20 +61,21 @@ describe 'Diamond Generation' do
     end
   end
 
-  it 'should generate the diamond for E' do
-    e_diamond = []
-    e_diamond << '    A    '
-    e_diamond << '   B B   '
-    e_diamond << '  C   C  '
-    e_diamond << ' D     D '
-    e_diamond << 'E       E'
-    e_diamond << ' D     D '
-    e_diamond << '  C   C  '
-    e_diamond << '   B B   '
-    e_diamond << '    A    '
+  describe 'Acceptance test' do
+    it 'should generate the diamond for E' do
+      e_diamond = []
+      e_diamond << '    A    '
+      e_diamond << '   B B   '
+      e_diamond << '  C   C  '
+      e_diamond << ' D     D '
+      e_diamond << 'E       E'
+      e_diamond << ' D     D '
+      e_diamond << '  C   C  '
+      e_diamond << '   B B   '
+      e_diamond << '    A    '
 
-    @dg.generate('E').should eq(e_diamond)
-
+      @dg.generate('E').should eq(e_diamond)
+    end
   end
 
 end
