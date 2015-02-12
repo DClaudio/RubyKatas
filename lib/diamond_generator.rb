@@ -3,28 +3,19 @@ class DiamondGenerator
   def generate(letter)
     result = []
     letter_index = letter.ord - STARTING_LETTER.ord
-    first_line = ' '*letter_index + STARTING_LETTER + ' '*letter_index
-    output_letter = STARTING_LETTER
     if letter == 'A'
-      result << first_line
+      result << 'A'
     else
       (0..letter_index-1).each do |index|
         output_letter = (STARTING_LETTER.ord + index).chr
         if index == 0
-          result << first_line
+          result << ' '*letter_index + output_letter + ' '*letter_index
         else
-          line = ' '*(letter_index-index) + output_letter + ' '*(2*index-1) + output_letter + ' '*(letter_index-index)
-          result << line
+          result << ' '*(letter_index-index) + output_letter + ' '*(2*index-1) + output_letter + ' '*(letter_index-index)
         end
       end
-      middle_row = letter + ' '*(2*letter_index-1) + letter
-      result = result + [middle_row] + result.reverse
+      result = result + [letter + ' '*(2*letter_index-1) + letter] + result.reverse
     end
-=begin
-    puts  "----- \n"
-    puts result
-    puts  " \n"
-=end
     result
   end
 end

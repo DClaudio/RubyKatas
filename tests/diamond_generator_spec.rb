@@ -61,7 +61,7 @@ describe 'Diamond Generation' do
     end
   end
 
-  it 'should generate the diamond for A' do
+  it 'should generate the diamond for E' do
     e_diamond = []
     e_diamond << '    A    '
     e_diamond << '   B B   '
