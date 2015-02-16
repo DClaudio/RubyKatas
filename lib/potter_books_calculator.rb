@@ -5,14 +5,14 @@
         etc
 =end
 
-DISCOUNTS = [1, 5.0/100, 10.0/100, 20.0/100, 25.0/100]
+DISCOUNTS = [1 - 0, 1 - 5.0/100, 1 - 10.0/100, 1 - 20.0/100, 1 - 25.0/100]
 BOOK_PRICE = 8
 def final_price(books)
   final_price = 0
-  remaining_books = books.select{ |count| count > 0}
-  remaining_books.each { |book_count| final_price += BOOK_PRICE * book_count}
-  if remaining_books.length > 1
-    final_price -= final_price * DISCOUNTS[remaining_books.length-1]
+  while books.length > 0 do
+    books = books.select { |count| count > 0 }
+    final_price += books.length * BOOK_PRICE * DISCOUNTS[books.length-1]
+    books.collect!{|count| count-1}
   end
   final_price
 end
