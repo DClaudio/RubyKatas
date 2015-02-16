@@ -3,11 +3,13 @@ require '../lib/potter_books_calculator'
 
 describe 'Potter Books Price Calculator' do
 
+  it 'should return the price for 0 books' do
+    expect(final_price([])).to eq(0)
+  end
+
   describe 'The price for identical books' do
     it 'should return the price for 1x book' do
-      expect(final_price([1,0,0,0,0])).to eq(8)
       expect(final_price([0,1,0,0,0])).to eq(8)
-      expect(final_price([0,0,0,1,0])).to eq(8)
     end
     it 'should return the price for multiple identical books' do
       expect(final_price([2,0,0,0,0])).to eq(16)
@@ -16,24 +18,22 @@ describe 'Potter Books Price Calculator' do
     end
   end
 
-  describe 'The price for two different books' do
+  describe 'The price for different books' do
     it 'should return the price for 2x different books' do
       expect(final_price([1,1,0,0,0])).to eq(15.2)
-      expect(final_price([0,1,0,0,0])).to eq(8)
-      expect(final_price([0,0,0,1,0])).to eq(8)
     end
-    it 'should return the price for 2x different books and one identical' do
-      #expect(final_price([2,1,0,0,0])).to eq(23.2)
-      #expect(final_price([0,1,0,0,0])).to eq(8)
-      #expect(final_price([0,0,0,1,0])).to eq(8)
+    it 'should return the price for 3x different books' do
+      expect(final_price([1,0,1,0,1])).to eq(21.6)
     end
+
   end
 
-  describe 'The price for three different books' do
-    it 'should return the price for 3x different books' do
-      expect(final_price([1,1,1,0,0])).to eq(21.6)
-      expect(final_price([0,1,1,1,0])).to eq(21.6)
-      expect(final_price([1,0,1,0,1])).to eq(21.6)
+  describe 'The price for different books and identical' do
+    it 'should return the price for 2x different books and one identical' do
+      expect(final_price([2,0,0,1,0])).to eq(23.2)
+    end
+    it 'should return the price for 3x different books and one identical' do
+      expect(final_price([2,0,1,0,1])).to eq(29.6)
     end
   end
 
