@@ -13,7 +13,6 @@ describe 'Potter Books Price Calculator' do
     end
     it 'should return the price for multiple identical books' do
       expect(final_price([2,0,0,0,0])).to eq(16)
-      expect(final_price([0,3,0,0,0])).to eq(24)
       expect(final_price([0,0,0,4,0])).to eq(32)
     end
   end
@@ -22,11 +21,9 @@ describe 'Potter Books Price Calculator' do
       expect(final_price([1,0,0,1,0])).to eq(15.2)
       expect(final_price([1,1,0,1,0])).to eq(21.6)
       expect(final_price([1,1,1,1,0])).to eq(25.6)
-      expect(final_price([1,1,1,1,1])).to eq(25.6)
       expect(final_price([1,1,1,1,1])).to eq(30)
     end
   end
-
 
   describe 'Shopping carts with one discount and one other book' do
     it 'should return the price for 2x discount and one book without discount' do
@@ -39,7 +36,13 @@ describe 'Potter Books Price Calculator' do
 
   describe 'Shopping carts with multiple discounts' do
     it 'should return the price for two 2x discounts' do
-      expect(final_price([1,0,0,2,0])).to eq(23.2)
+      expect(final_price([2,0,0,2,0])).to eq(30.4)
+      expect(final_price([2,2,1,0,0])).to eq(36.8)
+      expect(final_price([2,1,2,1,0])).to eq(40.8)
+
+    end
+    it 'should return the price for two 3x discounts' do
+      expect(final_price([3,3,2,1,0])).to eq(62.4)
     end
   end
 
