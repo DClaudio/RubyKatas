@@ -10,7 +10,7 @@ BOOK_PRICE = 8
 def final_price(books)
   final_price = 0
   while books.length > 0 do
-    books = books.select { |count| count > 0 }
+    books.select! { |count| count > 0 }
     final_price += books.length * BOOK_PRICE * DISCOUNTS[books.length-1]
     books.collect!{|count| count-1}
   end
