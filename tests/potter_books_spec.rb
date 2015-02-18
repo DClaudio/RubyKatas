@@ -46,19 +46,17 @@ describe 'Potter Books Price Calculator' do
     end
   end
 
-=begin
   describe 'Edge cases' do
     it 'should return the price for edge cases' do
       expect(final_price([2,2,2,1,1])).to eq(51.2)
-      expect(final_price([3,3,3,2,2])).to eq(81.2)
-      expect(final_price([5,5,4,5,4])).to eq(141.2)
+      #expect(final_price([3,3,3,2,2])).to eq(81.2)
+      #expect(final_price([5,5,4,5,4])).to eq(141.2)
       expect(final_price([3,2,4,2,1])).to eq(78.8)
-      expect(final_price([1,2,3,4,5])).to eq(100)
-      expect(final_price([3,4,3,6,6])).to eq(141.2)
+      #expect(final_price([1,2,3,4,5])).to eq(100)
+      #expect(final_price([3,4,3,6,6])).to eq(141.2)
       expect(final_price([3,4,3,6,0])).to eq(108)
     end
   end
-=end
 
 
 end
