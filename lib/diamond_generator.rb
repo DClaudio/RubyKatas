@@ -7,7 +7,8 @@ class DiamondGenerator
       if index == 0
         topDiamond << ' '*letter_distance + current_letter + ' '*letter_distance
       else
-        topDiamond << ' '*(letter_distance-index) + current_letter + ' '*(2*index-1) + current_letter + ' '*(letter_distance-index)
+        topDiamond << ' '*(letter_distance-index) + current_letter + ' '*(2*index-1)
+        + current_letter + ' '*(letter_distance-index)
       end
     end
     topDiamond + (letter=='A' ? [] : topDiamond.reverse[1..-1])
